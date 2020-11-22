@@ -1,2 +1,30 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_tag @cocktail.photo %>)">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <h2>Une valeur sûre.</h2>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Ingrédients</h3>
+  <div class="ingredients">
+  <ul>
+    <% @cocktails.each do |cocktail| %>
+      <li><%= ingredient.name %> — <%= dose.description %>
+        <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash destroy_dose"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'Add a new ingredient', new_cocktail_dose_path(@cocktail), class: 'btn-grad' %><br><br>
+  <%= link_to 'Edit this cocktail', edit_cocktail_path(@cocktail), class: 'btn btn-light' %>
+  <%= link_to 'Delete this cocktail', cocktail_path(@cocktail), class: 'btn btn-light', method: :delete %>
+  <%= link_to 'Back', cocktails_path, style: "text-decoration: none", class: 'btn-flat' %>
+  </div>
+</div>
+
+<div class="footer">
+Made with🍸 at Lille.
+</div>
+</body>

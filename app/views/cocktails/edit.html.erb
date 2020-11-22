@@ -1,2 +1,18 @@
-<h1>Cocktails#edit</h1>
-<p>Find me in app/views/cocktails/edit.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_tag @cocktail.photo %>)">
+  <div class="container">
+    <h1>EMBUSCADE.</h1>
+    <h2>Okay. Mais juste un verre.</h2>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Edit this cocktail cocktail</h3>
+
+  <%= render 'form', cocktail: @cocktail %>
+
+  <%= link_to 'Back', cocktails_path, class: 'btn btn-light' %>
+</div>
+
+<div class="footer">
+Made with🍸 at Lille.
+</div>

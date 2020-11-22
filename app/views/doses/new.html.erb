@@ -1,2 +1,22 @@
-<h1>Doses#new</h1>
-<p>Find me in app/views/doses/new.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_tag @cocktail.photo %>)">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <h2>Une valeur sûre.</h2>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Add a new ingredient</h3>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an ingredient" %>
+    <%= f.input :description %>
+    <%= f.submit "Add an ingredient", class: 'btn btn-light' %>
+  <% end %>
+<br>
+  <%= link_to 'Back', cocktail_path(@cocktail), style: "text-decoration: none", class: 'btn-flat' %>
+</div>
+
+<div class="footer">
+Made with🍸 at Lille.
+</div>
