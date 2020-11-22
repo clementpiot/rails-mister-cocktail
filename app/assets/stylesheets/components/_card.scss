@@ -1,32 +1,50 @@
-.btn-grad {
-  background-image: linear-gradient(to right, #232526 0%, #414345  70%, #232526  100%);
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-bottom: 50px;
+
+  :hover {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    text-decoration: none;
+    transition: 250ms linear;
+  }
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 2.5px;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(0.8);
+  transition: 250ms linear;
+}
+
+.ingredients {
+  padding-top: 50px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: lighter;
+  font-weight: normal;
+  text-decoration: none;
+  padding-bottom: 50px;
+  ul {
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+  }
 }
 
-.btn-grad:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
-
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: black;
-  transition: background 0.3s ease;
-  text-decoration: none;
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
+  margin-top: 25px;
 }
